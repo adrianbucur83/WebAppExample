@@ -1,0 +1,3 @@
+Alex,Roman,8,10,6,10,10
+Gigel,Moldovan,10,10,10,8
+Chuck,Norris,10,10,10,10,10

@@ -13,6 +13,12 @@ public class Student {
         this.lastName = lastName;
     }
 
+    public Student(String firstName, String lastName, List<Integer> grades) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.grades = grades;
+    }
+
     public String getFirstName() {
         return firstName;
     }
