@@ -3,7 +3,8 @@ package com.siit.webapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class CatalogueService {
@@ -22,6 +23,30 @@ public class CatalogueService {
             result = result.concat(student.getFirstName()).concat(" ").concat(student.getLastName().concat("<br></br>"));
         }
 
+        return result;
+    }
+
+    public Double calculateAverage(Student student) {
+       return student.getGrades()
+               .stream()
+               .mapToInt(num -> num)
+               .average()
+               .getAsDouble();
+    }
+
+    public String rankStudents() {
+
+        List<Student> rankedStudents = studentsRepository.getStudents();
+
+        rankedStudents.forEach(student ->student.setGradeAverage(calculateAverage(student)));
+        rankedStudents.sort(Comparator.comparing(Student::getGradeAverage).reversed());
+
+        String result = "";
+
+        for (Student student : rankedStudents) {
+            result = result.concat(student.getFirstName()).concat(" ").concat(student.getLastName()
+                    .concat(" - ").concat(student.getGradeAverage().toString()).concat("<br></br>"));
+        }
         return result;
     }
 
