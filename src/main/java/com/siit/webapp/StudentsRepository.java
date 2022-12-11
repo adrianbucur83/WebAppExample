@@ -14,8 +14,8 @@ public class StudentsRepository {
         Student student1 = new Student("Mihai", "Pop", 6, 10, 9);
         Student student2 = new Student("Roxana", "Dobre", 8, 10, 8);
         Student student3 = new Student("Vali", "Topescu", 9, 9, 9);
-        Student student4 = new Student("Andreea", "Lupau", 10, 9, 7);
-        Student student5 = new Student("Nicoleta", "Pop", 8, 8, 10);
+        Student student4 = new Student("Andreea", "Lupau", 10, 10, 9);
+        Student student5 = new Student("Nicoleta", "Pop", 6, 8, 10);
         studentList.add(student1);
         studentList.add(student2);
         studentList.add(student3);

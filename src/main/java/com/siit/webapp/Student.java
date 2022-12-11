@@ -37,7 +37,8 @@ public class Student {
     }
 
     public double getAverage() {
-        average =(getMathGrade() + getSportGrade() + getHistoryGrade()) / 3;
+        double sum = getMathGrade() + getSportGrade() + getHistoryGrade();
+        average = (double) sum / 3;
         return average;
     }
 
