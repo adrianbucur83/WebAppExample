@@ -40,6 +40,5 @@ public class Student {
                 ", historyGrade=" + historyGrade +
                 ", average=" + average;
 
-        //test
     }
 }
