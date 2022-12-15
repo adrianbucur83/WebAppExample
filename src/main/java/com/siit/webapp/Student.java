@@ -24,24 +24,11 @@ public class Student {
         return lastName;
     }
 
-    public Integer getMathGrade() {
-        return mathGrade;
-    }
-
-    public Integer getSportGrade() {
-        return sportGrade;
-    }
-
-    public Integer getHistoryGrade() {
-        return historyGrade;
-    }
-
     public double getAverage() {
-        double sum = getMathGrade() + getSportGrade() + getHistoryGrade();
-        average = (double) sum / 3;
+        double sum = mathGrade + sportGrade + historyGrade;
+        average =  sum / 3.0;
         return average;
     }
-
 
     @Override
     public String toString() {

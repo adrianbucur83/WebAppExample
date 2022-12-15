@@ -3,9 +3,8 @@ package com.siit.webapp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class CatalogueService {
@@ -28,11 +27,13 @@ public class CatalogueService {
 
     public String createStudentWithGradesCatalog(){
         List<Student> studentListToBeProcessed = studentsRepository.getStudents();
-        String studentsWithGrades = "";
-        for (Student student : studentListToBeProcessed) {
-            student.getAverage();
-            studentsWithGrades = studentsWithGrades.concat(student.toString().concat("<br></br>"));
+
+        studentListToBeProcessed.sort(Comparator.comparingDouble(Student::getAverage).reversed());
+        StringBuilder strBuilder = new StringBuilder();
+
+        for (Student s : studentListToBeProcessed) {
+            strBuilder.append(s.toString()).append("<br></br>");
         }
-        return studentsWithGrades;
+        return strBuilder.toString();
     }
 }
