@@ -39,5 +39,7 @@ public class Student {
                 ", sportGrade=" + sportGrade +
                 ", historyGrade=" + historyGrade +
                 ", average=" + average;
+
+        //test
     }
 }
